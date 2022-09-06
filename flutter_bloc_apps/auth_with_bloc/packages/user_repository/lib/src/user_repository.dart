@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:user_repository/src/models/models.dart';
 import 'package:uuid/uuid.dart';
 
+///[UserRepository] exposes a single method [getUser]
+// for this simple example
 class UserRepository {
   User? _user;
 

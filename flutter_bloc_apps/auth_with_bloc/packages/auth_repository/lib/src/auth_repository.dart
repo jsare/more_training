@@ -2,7 +2,10 @@ import 'dart:async';
 
 enum AuthenticationStatus { unknow, authenticated, unauthenticated }
 
-class AuthenticatedRepository {
+/// The [AuthenticationRepository] exposes [Stream] of [AuthenticationStatus]
+/// updates which will be used to notify the applictaion when a user
+/// signs in or out
+class AuthenticationRepository {
   final _controller = StreamController<AuthenticationStatus>();
 
   Stream<AuthenticationStatus> get status async* {
@@ -25,5 +28,7 @@ class AuthenticatedRepository {
     _controller.add(AuthenticationStatus.authenticated);
   }
 
+// Since we are maintaining StreamController internally, a dispose method is
+// exposed so that the controller can be closed when it is no longer needed
   void dispose() => _controller.close();
 }
