@@ -25,6 +25,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         super(const AuthState.unknown()) {
     on<AuthStatusChanged>(_onAuthStatusChanged);
     on<AuthLogoutRequested>(_onAuthLogoutRequested);
+    _authenticationStatusSubcription = _authenticationRepository.status.listen(
+      (status) => add(AuthStatusChanged(status)),
+    );
   }
 
   final AuthenticationRepository _authenticationRepository;
@@ -56,7 +59,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               ? AuthState.authenticated(user)
               : const AuthState.unauthenticated(),
         );
-      case AuthenticationStatus.unknow:
+      case AuthenticationStatus.unknown:
         return emit(const AuthState.unknown());
     }
   }

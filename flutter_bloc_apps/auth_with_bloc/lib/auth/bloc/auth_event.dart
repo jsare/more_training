@@ -9,7 +9,7 @@ abstract class AuthEvent extends Equatable {
 
 /// The [AuthStatusChanged] notifies the bloc of a change to the user's [AuthenticationStatus]
 class AuthStatusChanged extends AuthEvent {
-  const AuthStatusChanged({required this.status});
+  const AuthStatusChanged(this.status);
 
   final AuthenticationStatus status;
 

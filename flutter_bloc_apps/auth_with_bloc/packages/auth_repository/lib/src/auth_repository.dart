@@ -1,6 +1,6 @@
 import 'dart:async';
 
-enum AuthenticationStatus { unknow, authenticated, unauthenticated }
+enum AuthenticationStatus { unknown, authenticated, unauthenticated }
 
 /// The [AuthenticationRepository] exposes [Stream] of [AuthenticationStatus]
 /// updates which will be used to notify the applictaion when a user

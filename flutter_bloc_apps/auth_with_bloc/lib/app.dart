@@ -1,9 +1,9 @@
 import 'package:auth_repository/auth_repository.dart';
-import 'package:auth_with_bloc/auth/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_repository/user_repository.dart';
 
+import 'auth/auth.dart';
 import 'home/home.dart';
 import 'login/login.dart';
 import 'splash/splash.dart';
@@ -65,7 +65,7 @@ class _AppViewState extends State<AppView> {
                   (route) => false,
                 );
                 break;
-              case AuthenticationStatus.unknow:
+              case AuthenticationStatus.unknown:
                 break;
             }
           },

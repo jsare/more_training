@@ -10,7 +10,7 @@ abstract class LoginEvent extends Equatable {
 /// [LoginUsernameChanged] notifies the bloc that the username
 /// has been modified.
 class LoginUsernameChanged extends LoginEvent {
-  const LoginUsernameChanged({required this.username});
+  const LoginUsernameChanged(this.username);
 
   final String username;
 
@@ -21,7 +21,7 @@ class LoginUsernameChanged extends LoginEvent {
 /// [LoginPasswordChanged] notifies the bloc that the password
 /// has been modified.
 class LoginPasswordChanged extends LoginEvent {
-  const LoginPasswordChanged({required this.password});
+  const LoginPasswordChanged(this.password);
 
   final String password;
 
