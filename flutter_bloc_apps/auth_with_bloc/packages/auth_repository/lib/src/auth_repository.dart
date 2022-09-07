@@ -25,7 +25,7 @@ class AuthenticationRepository {
   }
 
   void logOut() {
-    _controller.add(AuthenticationStatus.authenticated);
+    _controller.add(AuthenticationStatus.unauthenticated);
   }
 
 // Since we are maintaining StreamController internally, a dispose method is
