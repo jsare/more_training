@@ -1,3 +1,5 @@
+import 'models/todo.dart';
+
 /// {@template todos_api}
 /// The interface and models for an API providing access to todos.
 /// {@endtemplate}
